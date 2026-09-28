@@ -1,7 +1,9 @@
 # GERE coder
 A skill for coding in the Genomics England Research Environment.
 
-Develop locally, deploy in the RE.
+Adaptable for other Trusted Research Environments.
+
+Develop locally, deploy in the TRE.
 
 ## Challenges addressed by this `SKILL.md`
 
