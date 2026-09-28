@@ -1,4 +1,4 @@
-# GERE agent skills
+# GERE coder
 A skill for coding in the Genomics England Research Environment.
 
 Develop locally, deploy in the RE.
