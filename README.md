@@ -9,6 +9,10 @@ Develop locally, deploy in the RE.
 The skill comes bundles with a manifest of GERE file paths and types.
 Taken from the publicly available [GEL docs](https://re-docs.genomicsengland.co.uk/).
 
+Need to update this for a different TRE? Here's a prompt you could adapt.
+
+>Use the docs at https://re-docs.genomicsengland.co.uk/ to produce a JSON file containing filepaths of the key data available in the Genomics England research environment and CloudOS. This resource will be used by agents to develop code locally, which can then be run in the airgapped research environment. Also provide a schema for the JSON file. For each entry provide the file path in the HPC, and/or the corresponding s3 path in CloudOS, and, if available the URL or access point in LabKey. For each entry also provide a succinct description of <80 characters, a concrete example filepath, and an informative "keywords" field (max 5 keywords per entry). The attached data dictionaries give more detail on the names and contents of the clinical data files in LabKey. Ask me any questions if clarification is needed.
+
 ### The agent can't read files in the GERE
 The skill expects to work with standard bioinformatics file formats, but prompts for
 synthetic data from the user if necessary. It keeps a memory of bespoke files and formats.
