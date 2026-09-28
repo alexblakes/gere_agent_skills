@@ -31,4 +31,3 @@ gwipp is an alias for git add -A; git rm $(git ls-files --deleted) 2> /dev/null;
 GERE. Try [Pixi](https://pixi.prefix.dev/latest/), for example. Installation instructions for Pixi in the GERE are [here](https://github.com/alexblakes/snippets/blob/main/gel_pixi.md).
 - Get familiar with your debugger in the TRE
 - Only write code on your local machine - this takes discipline.
-- 
