@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/gel-data-catalog.schema.json",
+  "title": "Genomics England data location catalog",
+  "type": "object",
+  "required": [
+    "catalog_version",
+    "generated_on",
+    "programmes",
+    "entries"
+  ],
+  "properties": {
+    "catalog_version": {
+      "type": "string"
+    },
+    "generated_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "programmes": {
+      "type": "object"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "programme",
+          "release",
+          "category",
+          "entry_type",
+          "name",
+          "description",
+          "formats",
+          "keywords",
+          "paths",
+          "availability",
+          "example_filepath",
+          "path_precision",
+          "source_urls"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "programme": {
+            "enum": [
+              "100kgp",
+              "gms",
+              "covid",
+              "cross-programme"
+            ]
+          },
+          "release": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "entry_type": {
+            "enum": [
+              "clinical_or_tabular_table",
+              "file_resource"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 79
+          },
+          "formats": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          },
+          "key_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "paths": {
+            "type": "object",
+            "required": [
+              "hpc",
+              "s3"
+            ],
+            "properties": {
+              "hpc": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "s3": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "availability": {
+            "type": "object",
+            "required": [
+              "hpc_filesystem",
+              "cloudos",
+              "labkey"
+            ],
+            "properties": {
+              "hpc_filesystem": {
+                "enum": [
+                  "available",
+                  "not_available",
+                  "not_documented"
+                ]
+              },
+              "cloudos": {
+                "enum": [
+                  "available",
+                  "not_available",
+                  "not_documented"
+                ]
+              },
+              "labkey": {
+                "enum": [
+                  "available",
+                  "not_available"
+                ]
+              }
+            }
+          },
+          "labkey": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "example_filepath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path_precision": {
+            "enum": [
+              "file",
+              "prefix",
+              "template",
+              "derived-file",
+              "access-point"
+            ]
+          },
+          "source_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            },
+            "minItems": 1
+          }
+        }
+      }
+    }
+  }
+}
